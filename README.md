@@ -225,23 +225,15 @@ Los scripts utilizan variables de entorno para:
 Ejemplo en `.env.example`:
 
 ```
-# ==============================
-# PostgreSQL
-# ==============================
+
 POSTGRES_HOST=localhost
 POSTGRES_PORT=5432
 POSTGRES_DB=ingestion_db
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
 
-# ==============================
-# Banxico API
-# ==============================
 BANXICO_TOKEN=TU_TOKEN_AQUI
 
-# ==============================
-# MinIO
-# ==============================
 MINIO_ENDPOINT=http://localhost:9000
 MINIO_ACCESS_KEY=minioadmin
 MINIO_SECRET_KEY=minioadmin
@@ -297,6 +289,7 @@ Dentro del bucket `raw` deben existir:
 * Carpeta `postgres/`
 * Carpeta `external/`
 * Archivos con fecha actual
+
 
 
 
