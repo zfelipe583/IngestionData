@@ -195,51 +195,58 @@ raw/postgres/test_connection/test_connection_YYYYMMDD.csv
 
 ---
 
-## 7️ Fuente de Datos 2 – API Pública
+## 7️⃣ Fuente de Datos 2 – API Pública
 
-Se utiliza la API pública de Banxico Serie histórica del tipo de cambio Tipo de cambio peso dólar desde 1954.
+Se utiliza la API pública de Banxico correspondiente a la **Serie histórica del tipo de cambio peso–dólar desde 1954** (ID: `SF63528`).
 
-* Endpoint utilizado:
-  `https://www.banxico.org.mx/SieAPIRest/service/v1/series/SF63528`
+* Endpoint utilizado:  
+  `https://www.banxico.org.mx/SieAPIRest/service/v1/series/SF63528/datos`
 
-* Formato original: JSON
+* Formato original: JSON  
 
-* No se realiza transformación
+* No se realiza transformación (capa RAW)
 
 * Ubicación en Data Lake:
 
 ```
-
-https://www.banxico.org.mx/SieAPIRest/service/v1/series/SF63528)
-
+raw/external/banxico/banxico_usd_mxn_historico_YYYYMMDD.json
 ```
 
-## 8️ Variables de Entorno
+---
+
+## 8️⃣ Variables de Entorno
 
 Los scripts utilizan variables de entorno para:
 
-* Conexión a PostgreSQL
-* Acceso a MinIO
+* Conexión a PostgreSQL  
+* Acceso a MinIO  
+* Autenticación con la API de Banxico  
 
 Ejemplo en `.env.example`:
 
-
+```
+# ==============================
+# PostgreSQL
+# ==============================
 POSTGRES_HOST=localhost
 POSTGRES_PORT=5432
 POSTGRES_DB=ingestion_db
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
-BANXICO_TOKEN= TU_TOKEN
 
-MINIO_ENDPOINT=localhost:9000
+# ==============================
+# Banxico API
+# ==============================
+BANXICO_TOKEN=TU_TOKEN_AQUI
+
+# ==============================
+# MinIO
+# ==============================
+MINIO_ENDPOINT=http://localhost:9000
 MINIO_ACCESS_KEY=minioadmin
 MINIO_SECRET_KEY=minioadmin
 MINIO_BUCKET=raw
 ```
-```
-
----
-
 ## 9️ Cómo Ejecutar el Proyecto
 
 ### 1️ Clonar repositorio
@@ -290,6 +297,7 @@ Dentro del bucket `raw` deben existir:
 * Carpeta `postgres/`
 * Carpeta `external/`
 * Archivos con fecha actual
+
 
 
 
