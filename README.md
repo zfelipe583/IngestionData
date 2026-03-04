@@ -195,7 +195,7 @@ raw/postgres/test_connection/test_connection_YYYYMMDD.csv
 
 ---
 
-## 7️⃣ Fuente de Datos 2 – API Pública
+## 7️ Fuente de Datos 2 – API Pública
 
 Se utiliza la API pública de Banxico correspondiente a la **Serie histórica del tipo de cambio peso–dólar desde 1954** (ID: `SF63528`).
 
@@ -214,7 +214,7 @@ raw/external/banxico/banxico_usd_mxn_historico_YYYYMMDD.json
 
 ---
 
-## 8️⃣ Variables de Entorno
+## 8️ Variables de Entorno
 
 Los scripts utilizan variables de entorno para:
 
@@ -289,6 +289,7 @@ Dentro del bucket `raw` deben existir:
 * Carpeta `postgres/`
 * Carpeta `external/`
 * Archivos con fecha actual
+
 
 
 
