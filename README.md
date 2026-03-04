@@ -209,9 +209,10 @@ Se utiliza la API pública de Banxico Serie histórica del tipo de cambio Tipo d
 * Ubicación en Data Lake:
 
 ```
+
 https://www.banxico.org.mx/SieAPIRest/service/v1/series/SF63528)
 
----
+```
 
 ## 8️ Variables de Entorno
 
@@ -222,7 +223,7 @@ Los scripts utilizan variables de entorno para:
 
 Ejemplo en `.env.example`:
 
-```
+
 POSTGRES_HOST=localhost
 POSTGRES_PORT=5432
 POSTGRES_DB=ingestion_db
@@ -234,6 +235,7 @@ MINIO_ENDPOINT=localhost:9000
 MINIO_ACCESS_KEY=minioadmin
 MINIO_SECRET_KEY=minioadmin
 MINIO_BUCKET=raw
+```
 ```
 
 ---
@@ -288,6 +290,7 @@ Dentro del bucket `raw` deben existir:
 * Carpeta `postgres/`
 * Carpeta `external/`
 * Archivos con fecha actual
+
 
 
 
