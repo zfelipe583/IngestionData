@@ -197,10 +197,10 @@ raw/postgres/test_connection/test_connection_YYYYMMDD.csv
 
 ## 7️ Fuente de Datos 2 – API Pública
 
-Se utiliza la API pública de Rick and Morty.
+Se utiliza la API pública de Banxico Serie histórica del tipo de cambio Tipo de cambio peso dólar desde 1954.
 
 * Endpoint utilizado:
-  `https://rickandmortyapi.com/api/character`
+  `https://www.banxico.org.mx/SieAPIRest/service/v1/series/SF63528`
 
 * Formato original: JSON
 
@@ -209,8 +209,7 @@ Se utiliza la API pública de Rick and Morty.
 * Ubicación en Data Lake:
 
 ```
-raw/external/rickandmorty/rick_and_morty_characters_YYYYMMDD.json
-```
+https://www.banxico.org.mx/SieAPIRest/service/v1/series/SF63528)
 
 ---
 
@@ -229,6 +228,7 @@ POSTGRES_PORT=5432
 POSTGRES_DB=ingestion_db
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
+BANXICO_TOKEN= TU_TOKEN
 
 MINIO_ENDPOINT=localhost:9000
 MINIO_ACCESS_KEY=minioadmin
@@ -288,6 +288,7 @@ Dentro del bucket `raw` deben existir:
 * Carpeta `postgres/`
 * Carpeta `external/`
 * Archivos con fecha actual
+
 
 
 
