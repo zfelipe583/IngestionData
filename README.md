@@ -63,12 +63,6 @@ IngestionData/
 │   └── requirements.txt
 ```
 
----
-Perfecto.
-Te lo acomodo profesionalmente para que lo pegues en el README como **Sección 5 – Verificación de PostgreSQL**, pero limpio y consistente con el resto del documento.
-
----
-
 ## 5️ Verificación de funcionamiento de PostgreSQL
 
 ### 5.1 Verificar que el contenedor esté activo
@@ -294,6 +288,7 @@ Dentro del bucket `raw` deben existir:
 * Carpeta `postgres/`
 * Carpeta `external/`
 * Archivos con fecha actual
+
 
 
 
